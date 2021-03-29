@@ -10,6 +10,8 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,6 +50,10 @@ class MainActivity : AppCompatActivity() {
 
             textview1.text = "Hola, maestra $position"
             textview2.text = "Saludos maestra $position"
+            Glide.with(miContexto).load("https://goo.gl/gEgYUd")
+                .apply(RequestOptions()
+                    .override(200, 200))
+                .into(imagen)
 
             return listRowLayout
 
